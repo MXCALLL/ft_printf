@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_digit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 18:36:55 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/18 13:22:37 by muidbell         ###   ########.fr       */
+/*   Created: 2024/12/18 10:26:53 by muidbell          #+#    #+#             */
+/*   Updated: 2024/12/18 10:35:57 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-#include <string.h> // to remove
-#include <stdio.h> // to remove
+void	ft_print_digit(int n)
+{
+	char	c;
 
-int		ft_printf(const char *format, ...);
-void	ft_print_char(char c);
-void	ft_print_string(char *s);
-void	ft_print_digit(int n);
-void	ft_print_decimal(unsigned int n);
-void	ft_putbase(int n);
-
-
-#endif
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_print_digit(n / 10);
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+}
