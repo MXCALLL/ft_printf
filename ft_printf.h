@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 18:36:55 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/18 13:22:37 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:18:53 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_print_string(char *s);
 void	ft_print_digit(int n);
 void	ft_print_decimal(unsigned int n);
 void	ft_putbase(int n);
-
+void	ft_puthex_up(unsigned int num);
+void	ft_puthex_low(unsigned int num);
 
 #endif

@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printhex_low.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 21:13:13 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/18 19:12:45 by muidbell         ###   ########.fr       */
+/*   Created: 2024/12/18 19:06:22 by muidbell          #+#    #+#             */
+/*   Updated: 2024/12/18 19:19:17 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int main()
+void ft_puthex_low(unsigned int num)
 {
-	ft_printf("%%Hello this cspdiuxX%% %i %p %x %X\n",-1337,13378,255,255);
-	printf("%%Hello this cspdiuxX%% %i %p %x %X\n",-1337,13378,255,255);
+	char base[16] = "0123456789abcdef";
 
+	if (num >= 16)
+		ft_puthex_low(num / 16);
+	write(1, &base[num % 16], 1);
 }
