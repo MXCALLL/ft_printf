@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 21:13:13 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/18 12:53:41 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:42:47 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	ft_printf("%%Hello this cspdiuxX%% %i %p\n",-13451137,-13378);
-	printf("%%Hello this cspdiuxX%% %i %p\n",-13451137,-13378);
+	ft_printf("%%Hello this cspdiuxX%% %i %p\n",-1337,13378);
+	printf("%%Hello this cspdiuxX%% %i %p\n",-1337,13378);
 
 }

@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:08:01 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/18 13:28:45 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:42:04 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,4 @@ void	ft_putbase(int n)
 	else
 		c = base[n];
 	write(1, &c, 1);
-}
-
-int main()
-{
-	ft_putbase(-13378);
-	printf("\n%p\n",-13378);
 }

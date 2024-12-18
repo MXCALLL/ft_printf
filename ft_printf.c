@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 18:34:37 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/18 12:54:45 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:41:22 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int ft_printf(const char *format, ...)
 	va_start(arg,format);
 
 	i = 0;
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] != '%')
 			ft_print_char(format[i]);
