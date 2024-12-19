@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 18:36:55 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 15:10:54 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:58:06 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdarg.h>
-# include <string.h> // to remove
-# include <stdio.h> // to remove
 
 int		ft_printf(const char *format, ...);
 int		ft_putchar(int c);

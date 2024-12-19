@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:08:01 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 15:17:04 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:02:58 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ static int	recursive(unsigned long n)
 
 int	ft_putbase(unsigned long n)
 {
-	int count;
+	int		count;
+
 	count = 0;
-    write(1, "0x", 2);
-    count += recursive(n);
+	write(1, "0x", 2);
+	count += recursive(n);
 	return (count + 2);
 }

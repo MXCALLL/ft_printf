@@ -6,16 +6,15 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 18:34:37 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 16:52:42 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:03:49 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	ft_format(char specifier, va_list arg)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	if (specifier == 'c')
@@ -35,13 +34,13 @@ static int	ft_format(char specifier, va_list arg)
 	return (count);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		count;
 	va_list	arg;
-	va_start (arg,format);
 
+	va_start (arg, format);
 	i = 0;
 	count = 0;
 	if (write(1, 0, 0) == -1)
@@ -59,5 +58,5 @@ int ft_printf(const char *format, ...)
 			count += ft_format(format[(i++) + 1], arg);
 		i++;
 	}
-	return (va_end(arg),count);
+	return (va_end(arg), count);
 }
