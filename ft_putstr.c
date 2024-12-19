@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbase.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 12:08:01 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 15:17:04 by muidbell         ###   ########.fr       */
+/*   Created: 2024/12/17 18:39:00 by muidbell          #+#    #+#             */
+/*   Updated: 2024/12/19 16:17:39 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	recursive(unsigned long n)
+int	ft_putstr(char *s)
 {
-	int		count;
-	char	*base;
+	size_t		i;
 
-	base = "0123456789abcdef";
-	count = 0;
-	if (n >= 16)
-		count += recursive(n / 16);
-	count += write(1, &base[n % 16], 1);
-	return (count);
-}
-
-int	ft_putbase(unsigned long n)
-{
-	int count;
-	count = 0;
-    write(1, "0x", 2);
-    count += recursive(n);
-	return (count + 2);
+	if (!s)
+		return (write(1,"(null)",6));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }

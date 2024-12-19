@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbase.c                                       :+:      :+:    :+:   */
+/*   ft_putdigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 12:08:01 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 15:17:04 by muidbell         ###   ########.fr       */
+/*   Created: 2024/12/18 10:26:53 by muidbell          #+#    #+#             */
+/*   Updated: 2024/12/19 13:01:54 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	recursive(unsigned long n)
+int	ft_putdigit(int n)
 {
+	char	c;
 	int		count;
-	char	*base;
 
-	base = "0123456789abcdef";
 	count = 0;
-	if (n >= 16)
-		count += recursive(n / 16);
-	count += write(1, &base[n % 16], 1);
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		count = 11;
+		return (count);
+	}
+	if (n < 0)
+	{
+		count += write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		count += ft_putdigit(n / 10);
+	c = (n % 10) + '0';
+	count += write(1, &c, 1);
 	return (count);
-}
-
-int	ft_putbase(unsigned long n)
-{
-	int count;
-	count = 0;
-    write(1, "0x", 2);
-    count += recursive(n);
-	return (count + 2);
 }

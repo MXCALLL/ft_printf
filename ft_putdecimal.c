@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbase.c                                       :+:      :+:    :+:   */
+/*   ft_putdecimal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 12:08:01 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 15:17:04 by muidbell         ###   ########.fr       */
+/*   Created: 2024/12/18 10:49:15 by muidbell          #+#    #+#             */
+/*   Updated: 2024/12/19 12:58:16 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	recursive(unsigned long n)
+int	ft_putdecimal(unsigned int n)
 {
+	char	c;
 	int		count;
-	char	*base;
 
-	base = "0123456789abcdef";
 	count = 0;
-	if (n >= 16)
-		count += recursive(n / 16);
-	count += write(1, &base[n % 16], 1);
+	if (n >= 10)
+		count += ft_putdecimal(n / 10);
+	c = (n % 10) + '0';
+	count += write(1, &c, 1);
 	return (count);
 }
-
-int	ft_putbase(unsigned long n)
-{
-	int count;
-	count = 0;
-    write(1, "0x", 2);
-    count += recursive(n);
-	return (count + 2);
-}
+// int main()
+// {
+// 	int i = ft_putdecimal(1337);
+// 	printf("%d",i);
+// }
