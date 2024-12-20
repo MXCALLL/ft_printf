@@ -6,7 +6,7 @@
 /*   By: muidbell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 18:34:37 by muidbell          #+#    #+#             */
-/*   Updated: 2024/12/19 17:03:49 by muidbell         ###   ########.fr       */
+/*   Updated: 2024/12/20 10:51:24 by muidbell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int	ft_format(char specifier, va_list arg)
 		count += ft_puthex_low(va_arg(arg, unsigned int));
 	else if (specifier == 'X')
 		count += ft_puthex_up(va_arg(arg, unsigned int));
+	else
+		ft_putchar(specifier);
 	return (count);
 }
 
